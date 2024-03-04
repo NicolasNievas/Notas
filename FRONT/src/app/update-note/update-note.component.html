@@ -1,0 +1,17 @@
+<div class="container mt-5">
+    <h2>Editar Nota</h2>
+    <form [formGroup]="form" (ngSubmit)="update()">
+      <div class="mb-3">
+        <label for="notaAnterior" class="form-label">Nota Anterior:</label>
+        <textarea id="notaAnterior" class="form-control" formControlName="notaAnterior" rows="4" ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="nuevaNota" class="form-label">Nueva Nota:</label>
+        <textarea id="nuevaNota" class="form-control" formControlName="nuevaNota" rows="4"></textarea>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Guardar Cambios</button>
+      </div>
+    </form>
+  </div>
+  

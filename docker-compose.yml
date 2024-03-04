@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  challenge-api:
+    container_name: Challenge
+    image: challenge-api
+    build:
+      context: ./BACK   
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - challenge-db
+    environment:
+      - DATABASE_URL=jdbc:postgresql://challenge-db:5432/challenge-db
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=admin
+    networks:
+      challenge-network:
+    restart: on-failure
+
+  challenge-db:
+    container_name: ChallengeDB
+    image: postgres:15.4
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: challenge-db
+    networks:
+      challenge-network:
+    restart: on-failure
+
+  challenge-frontend:
+    container_name: ChallengeFrontend
+    build:
+      context: ./frontend/ChallengeFront
+      dockerfile: Dockerfile
+    ports:
+      - "8081:4200"
+    depends_on:
+      - challenge-api
+    networks:
+      - challenge-network
+    restart: on-failure
+
+networks:
+  challenge-network:
+    driver: bridge

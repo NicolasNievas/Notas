@@ -1,0 +1,41 @@
+<!-- navbar.component.html -->
+<nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Challenge</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="#" routerLinkActive="active" routerLink="/crear-nota"
+          >Crear Nota</a
+        >
+        <a class="nav-link" href="#" routerLinkActive="active" routerLink="/listar"
+          >Listar Notas</a
+        >
+        <a href="#" class="nav-link" routerLinkActive="active" routerLink="/listar-archivadas">
+          Listar Notas Archivadas
+        </a>
+        <a href="#" class="nav-link" routerLinkActive="active" routerLink="/listar-activas">
+          Listar Notas Activas
+        </a>
+        <a href="#" class="nav-link" routerLinkActive="active" routerLink="/listar-etiqueta">
+          Listar Notas por Etiqueta
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- app.component.html -->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

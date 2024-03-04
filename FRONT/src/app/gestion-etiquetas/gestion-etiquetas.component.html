@@ -1,0 +1,32 @@
+<div class="container mt-5">
+    <h3>Gestión de Etiquetas para Nota</h3>
+    <div *ngIf="note">
+      <div><strong>Contenido:</strong> {{ note.content }}</div>
+      <div>
+        <strong>Etiquetas:</strong>
+        <span *ngFor="let etiqueta of note.tags; let lastTag = last">
+          {{ etiqueta.name }}{{ !lastTag ? ", " : "" }}
+        </span>
+      </div>
+      <hr />
+      <div class="form-group">
+        <label for="tags">Seleccionar Etiquetas:</label>
+        <select id="tags" [(ngModel)]="selectedTags" multiple class="form-control">
+          <option *ngFor="let tag of allTags" [ngValue]="tag">
+            {{ tag.name }}
+          </option>
+        </select>
+      </div>
+      <button (click)="addTags(note)" [disabled]="isOperationPending" class="btn btn-success">
+        Agregar Etiquetas
+      </button>
+      <button (click)="removeTags(note)" [disabled]="isOperationPending" class="btn btn-danger">
+        Quitar Etiquetas
+      </button>
+      <hr />
+      <button class="btn btn-primary" (click)="goBackToList()">
+        Volver al Listado
+      </button>
+    </div>
+  </div>
+  
