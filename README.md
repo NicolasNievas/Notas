@@ -15,4 +15,6 @@ En la edicion de la nota, se mostrara el contenido de la nota anterior y un camp
 
 ![image](https://github.com/NicolasNievas/Notas/assets/111009234/b7c159e7-b441-4832-986f-08ec920265e3)
 
+En la creacion de la nota se podra seleccionar una etiqueta para la nota y en caso de querer agregarle mas etiquetas, se podra modificar la nota y agregar solamente las etiquetas que requiera la nota.
 
+![image](https://github.com/NicolasNievas/Notas/assets/111009234/4a585889-577d-45e2-aae1-c6f160370335)
